@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+
+.activeColor{
+  padding-top: 5px;
+  height: 30px;
+  width: 10%;
+  border: 2px solid gray;
+  cursor: pointer;
+  margin-right: 4rem;
+  background-color: green;
+  color: #FFFF;
+}
+
+.pointer{
+  cursor: pointer;
+  margin-right: 4rem;
+}
+
+.row{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.input-fields{
+  height: 30px;
+  margin: 10px;
+}
+
+.btn{
+  width: 100px;
+  height: 40px;
+  background-color: blue;
+  color: #FFFF;
+  border: none;
+  cursor: pointer;
+}

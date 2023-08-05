@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import AuthenticationPage from './AuthenticationPage'
+import RecipeList from './RecipeList';
+import recipes from './recipes';
+import RecipeDetails from './RecipeDetails';
+import Profile from './Profile';
 
-function App() {
+
+const App = () => {
+  const [savedRecipes, setSavedRecipes] = useState(() => {
+    const savedRecipesData = localStorage.getItem('savedRecipes');
+    return savedRecipesData ? JSON.parse(savedRecipesData) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
+  }, [savedRecipes]);
+
+  const handleSaveRecipe = (recipe) => {
+    setSavedRecipes((prevSavedRecipes) => [...prevSavedRecipes, recipe]);
+  };
+
+  // Function to handle removing recipes from the user's profile
+  const handleRemoveRecipe = (recipeId) => {
+    setSavedRecipes((prevSavedRecipes) => prevSavedRecipes.filter((recipe) => recipe.id !== recipeId));
+  };
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    <div>
+        <Routes>
+            <Route path='/' element={<AuthenticationPage />} />
+            <Route path='/home' element={<RecipeList recipes={recipes} onSaveRecipe={handleSaveRecipe} />} />
+            <Route path="/recipe/:id" element={<RecipeDetails recipes={recipes} />} />
+            <Route
+              path="/profile"
+              element={<Profile savedRecipes={savedRecipes} onRemoveRecipe={handleRemoveRecipe} />}
+            />
+        </Routes>
     </div>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

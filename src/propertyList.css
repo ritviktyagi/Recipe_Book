@@ -1,0 +1,153 @@
+.property-list {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .property-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .property-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    max-width: 300px;
+  }
+  
+  .property-card h3 {
+    margin-top: 0;
+  }
+  
+  .property-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .property-search {
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    }
+  
+  .property-search input[type="text"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
+
+  .recipe-card {
+    position: relative;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .save-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    /* background-color: transparent; */
+    border: none;
+    cursor: pointer;
+  }
+  
+  .save-button i {
+    color: #333;
+  }
+
+  .options-overlay {
+    position: absolute;
+    top: 0%;
+    right: 40px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .options-overlay button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 4px;
+  }
+  
+  
+  .recipe-card:hover .save-button {
+    display: block;
+  }
+  
+  
+  .property-card:hover .save-button {
+    display: block;
+  }
+
+  .close-btn{
+    position: absolute;
+    left: 5.6rem;
+    border: 1px solid;
+    height: 22px;
+    top: 0px;
+    /* padding: 8px; */
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-color: burlywood;
+  }
+
+  .profile-container {
+    right: 5px;
+    top: 5%;
+    position: absolute;
+    cursor: pointer;
+  }
+  
+  .profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ccc;
+  }
+
+  .options-overlay-2 {
+    width: 60px;
+    position: absolute;
+    top: 0%;
+    right: 40px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .options-overlay-2 button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .recipe-img{
+    width: 200px;
+  }
